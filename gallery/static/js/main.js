@@ -28,5 +28,23 @@ $(document).ready(
                     }
                 )
             })
+        $('.btn-bookmark').click(
+            function (e) {
+                e.preventDefault()
+                $.ajax({
+                        method: 'POST',
+                        url: baseUrl + `api/photo/${$(e.currentTarget).data('id')}/bookmark/`,
+                        headers: {Authorization: 'Token ' + localStorage.getItem('auth_token')},
+                        success: function (response) {
+                            $(`#bookmark-txt-${$(e.currentTarget).data('id')}`).text(`${response.bookmarks_total} users bookmark photo`)
+                            $(e.currentTarget).children('i').toggleClass('fa-solid fa-regular')
+                        },
+                        error: function (response) {
+                            console.log(response)
+                        }
+                    }
+                )
+            }
+        )
     }
 )
