@@ -9,7 +9,7 @@
             </div>
             <div class="card-body">
                 <h4 class="card-title">{{ photo.title }}</h4>
-                <p class="card-text">by <span class="username-text">{{ photo.author.username }}</span></p>
+                <p class="card-text">by <a href="{% url 'accounts:user_detail' photo.author.pk %}"><span class="username-text">{{ photo.author.username }}</span></a></p>
                 <small class="text-muted">{{ photo.created_at }}</small>
             </div>
         </div>
