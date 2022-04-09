@@ -1,0 +1,26 @@
+.navbar {
+    margin-bottom: 40px;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+}
+.username-text {
+    font-weight: bold;
+}
+.photo-container {
+    margin: 0 150px 0 150px;
+}

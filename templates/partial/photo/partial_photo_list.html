@@ -1,20 +1,16 @@
 {% load static %}
-<div class="row">
+<div class="photo-container">
     {% for photo in photos %}
-        <div class="col-lg-6 col-xl-4">
-            <div class="card mb-3">
-                <div class="row g-0">
-                    <div class="col-md-4" style="height: 200px">
-                        <img src="{{ photo.image.url }}" class="img-fluid rounded-start" alt="product_image" style="height: 90%">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ photo.title }}</h5>
-                            <p class="card-text">Author: {{ photo.author }}</p>
-                            <a href="{% url 'gallery:photo_detail' photo.pk %}" class="btn btn-dark">See more</a>
-                        </div>
-                    </div>
+        <div class="card mb-3 post">
+            <div class="card-header">
+                <div class="image">
+                    <img src="{{ photo.image.url }}" class="card-img-top" alt="...">
                 </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ photo.title }}</h4>
+                <p class="card-text">by <span class="username-text">{{ photo.author.username }}</span></p>
+                <small class="text-muted">{{ photo.created_at }}</small>
             </div>
         </div>
     {% empty %}
