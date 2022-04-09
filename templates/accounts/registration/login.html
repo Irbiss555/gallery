@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1 style="text-align: center">Sign in</h1>
-    <form action="{% url 'accounts:login' %}" method="post" class="text-center account-form">
+    <form action="{% url 'accounts:login' %}" method="post" id="login-form" class="text-center account-form">
         {% csrf_token %}
         <div class="mb-3">
             <label for="username" class="form-label">Username:</label>
