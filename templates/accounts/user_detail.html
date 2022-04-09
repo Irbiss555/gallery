@@ -13,4 +13,6 @@
                 </div>
         </div>
     </div>
+    <h3 style="margin-top: 40px">Bookmarks</h3>
+    {% include 'partial/photo/partial_photo_list.html' with photos=user_obj.bookmarked_photos.all %}
 {% endblock %}
