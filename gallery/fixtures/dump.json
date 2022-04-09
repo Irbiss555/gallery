@@ -1,0 +1,132 @@
+[
+{
+  "model": "gallery.photo",
+  "pk": 1,
+  "fields": {
+    "image": "photo_images/cat_sunglasses.jpg",
+    "title": "The cat",
+    "author": 2,
+    "created_at": "2022-04-09T06:44:26.370Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 2,
+  "fields": {
+    "image": "photo_images/will_smith.jpg",
+    "title": "Will Smith",
+    "author": 2,
+    "created_at": "2022-04-09T06:44:49.371Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 3,
+  "fields": {
+    "image": "photo_images/test_0pI0QSk.png",
+    "title": "New photo",
+    "author": 2,
+    "created_at": "2022-04-09T07:23:43.446Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 5,
+  "fields": {
+    "image": "photo_images/elan_mask.jpg",
+    "title": "Elon Mask!",
+    "author": 3,
+    "created_at": "2022-04-09T08:44:51.043Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 6,
+  "fields": {
+    "image": "photo_images/tropical-beach.jpg",
+    "title": "I need vitamin sea!",
+    "author": 4,
+    "created_at": "2022-04-09T12:12:47.302Z"
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 10,
+  "fields": {
+    "photo": 1,
+    "user": 2
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 21,
+  "fields": {
+    "photo": 5,
+    "user": 3
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 23,
+  "fields": {
+    "photo": 6,
+    "user": 4
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 25,
+  "fields": {
+    "photo": 2,
+    "user": 4
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 26,
+  "fields": {
+    "photo": 1,
+    "user": 4
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 27,
+  "fields": {
+    "photo": 3,
+    "user": 4
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 28,
+  "fields": {
+    "photo": 1,
+    "user": 3
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 29,
+  "fields": {
+    "photo": 3,
+    "user": 3
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 30,
+  "fields": {
+    "photo": 6,
+    "user": 2
+  }
+},
+{
+  "model": "gallery.bookmark",
+  "pk": 31,
+  "fields": {
+    "photo": 5,
+    "user": 2
+  }
+}
+]
