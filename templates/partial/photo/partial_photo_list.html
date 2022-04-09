@@ -1,0 +1,26 @@
+{% load static %}
+<div class="row">
+    {% for photo in photos %}
+        <div class="col-lg-6 col-xl-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4" style="height: 200px">
+                        <img src="{{ photo.image.url }}" class="img-fluid rounded-start" alt="product_image" style="height: 90%">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ photo.title }}</h5>
+                            <p class="card-text">Author: {{ photo.author }}</p>
+                            <a href="#" class="btn btn-dark">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <h3>Photos not found</h3>
+    {% endfor %}
+</div>
+{% if is_paginated %}
+    {% include 'common/paginator.html' %}
+{% endif %}
