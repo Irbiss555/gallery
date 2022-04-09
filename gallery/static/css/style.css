@@ -9,6 +9,10 @@
 }
 a {
     text-decoration: none;
+    color: black;
+}
+.nav-link > a {
+    color: white;
 }
 .card-header {
     padding: 0;
