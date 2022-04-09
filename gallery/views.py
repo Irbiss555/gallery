@@ -10,13 +10,13 @@ class PhotoListView(ListView):
     model = Photo
     context_object_name = 'photos'
 
-#
-# class ProductDetailView(DetailView):
-#     template_name = 'product/product_detail.html'
-#     model = Product
-#     context_object_name = 'product'
-#
-#
+
+class PhotoDetailView(DetailView):
+    template_name = 'gallery/photo/photo_detail.html'
+    model = Photo
+    context_object_name = 'photo'
+
+
 # class ProductCreateView(PermissionRequiredMixin, CreateView):
 #     template_name = 'product/product_create.html'
 #     model = Product
