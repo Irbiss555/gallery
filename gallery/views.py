@@ -44,6 +44,9 @@ class PhotoUpdateView(PermissionRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('gallery:photo_detail', kwargs={'pk': self.object.pk})
 
+    def has_permission(self):
+        return super().has_permission() or self.get_object().author == self.request.user
+
 #
 # class ProductDeleteView(PermissionRequiredMixin, DeleteView):
 #     model = Product
