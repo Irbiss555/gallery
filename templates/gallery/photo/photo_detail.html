@@ -20,7 +20,7 @@
                     {% if perms.gallery.delete_photo or request.user == photo.author %}
                         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete
                         </button>
-{#                        {% include 'partial/photo/delete_photo_modal.html' %}#}
+                        {% include 'partial/photo/delete_photo_modal.html' %}
                     {% endif %}
                 </div>
             </div>
