@@ -12,6 +12,9 @@ class PhotoListView(ListView):
     model = Photo
     context_object_name = 'photos'
 
+    def get_queryset(self):
+        return super().get_queryset().order_by('-created_at')
+
 
 class PhotoDetailView(DetailView):
     template_name = 'gallery/photo/photo_detail.html'
