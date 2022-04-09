@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -35,15 +35,15 @@ class PhotoCreateView(LoginRequiredMixin, CreateView):
         return reverse('gallery:photo_detail', kwargs={'pk': self.object.pk})
 
 
-# class ProductUpdateView(PermissionRequiredMixin, UpdateView):
-#     template_name = 'product/product_update.html'
-#     model = Product
-#     form_class = ProductForm
-#     permission_required = 'market.change_product'
-#
-#     def get_success_url(self):
-#         return reverse('detail_product', kwargs={'pk': self.object.pk})
-#
+class PhotoUpdateView(PermissionRequiredMixin, UpdateView):
+    template_name = 'gallery/photo/photo_update.html'
+    model = Photo
+    form_class = PhotoForm
+    permission_required = 'gallery.change_photo'
+
+    def get_success_url(self):
+        return reverse('gallery:photo_detail', kwargs={'pk': self.object.pk})
+
 #
 # class ProductDeleteView(PermissionRequiredMixin, DeleteView):
 #     model = Product
