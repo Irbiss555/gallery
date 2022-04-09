@@ -3,9 +3,11 @@
     {% for photo in photos %}
         <div class="card mb-3 post">
             <div class="card-header">
-                <div class="image">
+                <a href="{% url 'gallery:photo_detail' photo.pk %}">
+                    <div class="image">
                     <img src="{{ photo.image.url }}" class="card-img-top" alt="...">
                 </div>
+                </a>
             </div>
             <div class="card-body">
                 <h4 class="card-title">{{ photo.title }}</h4>

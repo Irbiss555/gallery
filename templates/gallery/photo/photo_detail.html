@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block content %}
-    <div class="col-lg-6 col-xl-4">
-        <div class="card mb-3">
-            <div class="row g-0">
-                <div class="col-md-4" style="height: 200px">
-                    <img src="{{ photo.image.url }}" class="img-fluid rounded-start" alt="product_image"
-                         style="height: 90%">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ photo.title }}</h5>
-                        <p class="card-text">Author: {{ photo.author }}</p>
+    <div class="photo-container">
+        <div class="card mb-3 post">
+            <div class="card-header">
+                <a href="{% url 'gallery:photo_detail' photo.pk %}">
+                    <div class="image">
+                        <img src="{{ photo.image.url }}" class="card-img-top" alt="...">
                     </div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ photo.title }}</h4>
+                <p class="card-text">by <a href="{% url 'accounts:user_detail' photo.author.pk %}"><span
+                        class="username-text">{{ photo.author.username }}</span></a></p>
+                <small class="text-muted">{{ photo.created_at }}</small>
+                <div class="card-footer">
                     {% if perms.gallery.change_photo or request.user == photo.author %}
                         <a href="{% url 'gallery:photo_edit' photo.pk %}" class="btn btn-primary">Edit</a>
                     {% endif %}
@@ -26,6 +29,6 @@
             </div>
         </div>
     </div>
-    <h3 style="margin-top: 40px">Bookmarks</h3>
+    <h3 style="margin-top: 40px">Bookmarked users</h3>
     {% include 'partial/accounts/partial_user_list.html' with user_objects=photo.bookmarked_users.all %}
 {% endblock %}
