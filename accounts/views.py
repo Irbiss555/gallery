@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accounts.forms import MyUserCreationForm
 
@@ -23,3 +23,9 @@ class RegisterView(CreateView):
 
     def get_success_url(self):
         return reverse('accounts:login')
+
+
+class UserDetailView(DetailView):
+    model = get_user_model()
+    template_name = 'accounts/user_detail.html'
+    context_object_name = 'user_obj'
