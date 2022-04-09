@@ -47,10 +47,13 @@ class PhotoUpdateView(PermissionRequiredMixin, UpdateView):
     def has_permission(self):
         return super().has_permission() or self.get_object().author == self.request.user
 
-#
-# class ProductDeleteView(PermissionRequiredMixin, DeleteView):
-#     model = Product
-#     permission_required = 'market.add_product'
-#
-#     def get_success_url(self):
-#         return reverse('market:product_list')
+
+class PhotoDeleteView(PermissionRequiredMixin, DeleteView):
+    model = Photo
+    permission_required = 'gallery.delete_photo'
+
+    def get_success_url(self):
+        return reverse('gallery:photo_list')
+
+    def has_permission(self):
+        return super().has_permission() or self.get_object().author == self.request.user
