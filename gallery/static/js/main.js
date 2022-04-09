@@ -2,6 +2,11 @@ let baseUrl = 'http://127.0.0.1:8000/'
 
 $(document).ready(
     function () {
+        $('#btn-sing-out').click(
+            function () {
+                localStorage.setItem('auth_token', null)
+            }
+        )
         $('#login-form').submit(
             function (e) {
                 let inputs = $(this).serializeArray()
