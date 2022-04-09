@@ -11,7 +11,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ photo.title }}</h5>
                             <p class="card-text">Author: {{ photo.author }}</p>
-                            <a href="#" class="btn btn-dark">See more</a>
+                            <a href="{% url 'gallery:photo_detail' photo.pk %}" class="btn btn-dark">See more</a>
                         </div>
                     </div>
                 </div>
