@@ -14,6 +14,14 @@
                         <h5 class="card-title">{{ photo.title }}</h5>
                         <p class="card-text">Author: {{ photo.author }}</p>
                     </div>
+                    {% if perms.gallery.change_photo or request.user == photo.author %}
+                        <a href="{% url 'gallery:photo_edit' photo.pk %}" class="btn btn-primary">Edit</a>
+                    {% endif %}
+                    {% if perms.gallery.delete_photo or request.user == photo.author %}
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete
+                        </button>
+{#                        {% include 'partial/photo/delete_photo_modal.html' %}#}
+                    {% endif %}
                 </div>
             </div>
         </div>
