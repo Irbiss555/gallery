@@ -7,9 +7,11 @@ $(document).ready(
                 localStorage.setItem('auth_token', null)
             }
         )
-        $('#login-form').submit(
+        $('#sign-in-btn').click(
             function (e) {
-                let inputs = $(this).serializeArray()
+                e.preventDefault()
+                let form_element = $('#login-form')
+                let inputs = $(form_element).serializeArray()
                 let form = {}
                 inputs.forEach(function (value) {
                     if (value['name'] === 'username') {
@@ -31,7 +33,7 @@ $(document).ready(
                             console.log(response)
                         }
                     }
-                )
+                ).then(form_element.submit())
             })
         $('.btn-bookmark').click(
             function (e) {
